@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KITSUNE REBORN - Minecraft Roleplay Server</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Ensure body is scrollable */
+        body {
+            min-height: 100vh;
+            background: url('your-background-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-top: 50px;
+            animation: fadeInDown 1.5s ease-in-out;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin: 10px 0 20px;
+            animation: fadeIn 1.5s ease-in-out 0.5s;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        }
+
+        .animated-text {
+            color: #f77f00;
+            animation: colorChange 3s infinite;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes colorChange {
+            0%, 100% { color: #f77f00; }
+            50% { color: #e63946; }
+        }
+
+        .container {
+            padding: 20px;
+            position: relative;
+        }
+
+        /* Enhanced Image Animation */
+        .image-gallery img {
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            animation: zoomIn 15s ease-in-out infinite, fadeImage 15s ease-in-out infinite;
+        }
+
+        @keyframes fadeImage {
+            0%, 100% { opacity: 0; }
+            20%, 80% { opacity: 1; }
+        }
+
+        @keyframes zoomIn {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .buttons {
+            margin: 30px 0;
+        }
+
+        /* Play and Discord Button Glow Effect */
+        .button {
+            background-color: #f77f00;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            color: white;
+            font-size: 1.2rem;
+            margin: 15px 0;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            transition: background-color 0.3s, transform 0.2s;
+            box-shadow: 0 0 15px rgba(247, 127, 0, 0.5);
+        }
+
+        .button i {
+            margin-right: 10px;
+        }
+
+        .button:hover {
+            background-color: #d62828;
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(214, 40, 40, 0.8);
+        }
+
+        .button:active {
+            transform: translateY(0);
+        }
+
+        /* IP Box with Separate Copy Buttons */
+        .ip-box {
+            background-color: #333333;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            display: inline-block;
+        }
+
+        .ip-text {
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+
+        .copy-buttons {
+            margin-top: 10px;
+        }
+
+        .copy-button {
+            background-color: #f77f00;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .copy-button i {
+            margin-right: 8px;
+        }
+
+        .copy-button:hover {
+            background-color: #d62828;
+        }
+
+        /* Ensure the content is scrollable and fits smaller screens */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.3rem; }
+            .button { padding: 12px 30px; font-size: 1.1rem; }
+            .ip-text { font-size: 1.2rem; }
+            .image-gallery img { width: 100%; }
+        }
+    </style>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to <span class="animated-text">KITSUNE REBORN</span></h1>
+        <h2>Explore the world of <span class="animated-text">KITSUNE CITY</span> and start your roleplay adventure</h2>
+
+        <!-- Image Gallery with Animation -->
+        <div class="image-gallery">
+            <img src="placeholder1.jpg" alt="Kitsune Reborn City Placeholder">
+        </div>
+
+        <!-- IP Address and Port with Separate Copy Buttons -->
+        <div class="ip-box">
+            <span class="ip-text">IP: 123.45.67.89 | Port: 25565</span>
+            <div class="copy-buttons">
+                <button class="copy-button" onclick="copyIP()">
+                    <i class="fas fa-clipboard"></i> Copy IP
+                </button>
+                <button class="copy-button" onclick="copyPort()">
+                    <i class="fas fa-clipboard"></i> Copy Port
+                </button>
+            </div>
+        </div>
+
+        <!-- Play Now Button -->
+        <div class="buttons">
+            <button class="button" onclick="window.location.href='your-play-link.html'">
+                <i class="fas fa-play"></i> Play Now
+            </button>
+        </div>
+
+        <!-- Discord Button -->
+        <div class="buttons">
+            <button class="button" onclick="window.location.href='https://discord.com/invite/your-server-id'">
+                <i class="fab fa-discord"></i> Join Discord
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function copyIP() {
+            var ip = '123.45.67.89';
+            navigator.clipboard.writeText(ip).then(function() {
+                alert('IP copied to clipboard: ' + ip);
+            }, function(err) {
+                alert('Failed to copy IP: ', err);
+            });
+        }
+
+        function copyPort() {
+            var port = '25565';
+            navigator.clipboard.writeText(port).then(function() {
+                alert('Port copied to clipboard: ' + port);
+            }, function(err) {
+                alert('Failed to copy Port: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
